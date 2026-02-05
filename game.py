@@ -9,9 +9,10 @@ import pygame.locals
 
 from game_world.racetrack import RaceTrack, load_track
 from random_bot import random_move
+from serena_bot import smart_move
 
-TRACK = load_track("./tracks/trivial.pkl")
-PLAYER = random_move
+TRACK = load_track("./tracks/your_map.pkl")
+PLAYER = smart_move
 REPLAY_SPEED = 0.1  # seconds per move in the replay. (lower is faster)
 SHOW_REPLAY = True
 
