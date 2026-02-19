@@ -6,6 +6,7 @@ from collections import deque
 from copy import deepcopy
 
 Point = tuple[int, int]
+button_path = None
 
 class State:
 
@@ -107,7 +108,7 @@ def check_state(curr: State, track: RaceTrack, frontier: list):
 
 
 def main(track: RaceTrack):
-    button_path = []
+    b_path = []
     root = State(track, None, None)
     frontier = [root]
     current = root
@@ -118,13 +119,13 @@ def main(track: RaceTrack):
 
     # retrace my steps to root
     while current.parent != None:
-        button_path.append(current.prev_button)
+        b_path.append(current.prev_button)
         current = current.parent
 
-    return button_path[::-1]
+    return b_path[::-1]
 
 def act(loc: Point, track: RaceTrack):
-    button_path = main()
+    button_path = main(track)
     if button_path is None:
          button_path = main(track)
     if not button_path:
