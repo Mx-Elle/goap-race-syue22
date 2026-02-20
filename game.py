@@ -9,11 +9,11 @@ import pygame.locals
 
 from game_world.racetrack import RaceTrack, load_track
 from random_bot import random_move
-from serena_bot import State
+from serena_bot import act
 import traceback
 
-TRACK = load_track("./tracks/level1.pkl")
-PLAYER = State
+TRACK = load_track("./tracks/your_room.pkl")
+PLAYER = act
 REPLAY_SPEED = 1.0  # seconds per move in the replay. (lower is faster)
 SHOW_REPLAY = True
 
