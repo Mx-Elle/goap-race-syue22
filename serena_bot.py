@@ -5,6 +5,13 @@ from collections import defaultdict
 from collections import deque
 from copy import deepcopy
 
+"""
+    Note: This only works for tracks that don't have buttons. I suspect that astar is taking the final
+    target (track.target) as the target instead of the next button as the target. Unfortunately, due to
+    squash nationals (I've learned I can't work on a bus unless I want motion sickness) I couldn't finish
+    debugging before the deadline.
+"""
+
 Point = tuple[int, int]
 button_path = None
 
